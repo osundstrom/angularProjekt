@@ -1,0 +1,45 @@
+nav{
+    background-image: url(/assets/images/nav1.jpg);
+    background-position: center;
+    border-bottom: 1px solid black;
+    div{
+        display: block;
+    }
+    img{
+        width: 8rem;
+        margin: auto;
+        position: relative;
+        
+    }
+    ul{
+        list-style: none;
+        margin: auto;
+        //margin-left: 10vw;
+        position: relative;
+        
+    }
+
+    li{
+        display: inline-block;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-left: 1vw;
+        
+    }
+    button{
+        color: black;
+        background-color: white ;
+        text-decoration: none;
+        border: none;
+        border-radius: 50px;
+        width: fit-content;
+        border: 1px solid white;
+        
+    }
+    button:hover{
+        text-decoration: underline;
+        background-color: aquamarine;
+        border: 1px solid black;
+        
+    }
+}

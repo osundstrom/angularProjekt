@@ -1,0 +1,39 @@
+#allCourses{
+    position: relative;
+    width: 100vw;
+    margin: auto;
+    
+    
+    table{
+        background-color: aliceblue;
+        padding: 1%;
+        margin: auto;
+        border-bottom: 4px double rgb(0, 0, 0);
+        
+    }
+    tr{
+        width: fit-content;
+        border-bottom: 1px double rgb(94, 94, 94);
+        
+    }
+
+
+        div{
+            text-align: center;
+        }
+    }
+
+    h1{
+        text-align: center;
+    }
+
+
+    form{
+        text-align: center;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        input{
+            font-size: 120%;
+            
+        }
+    }

@@ -1,1 +1,45 @@
-<p>kurser works!</p>
+<h1>Alla kurser</h1>
+
+<form>
+    <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearch()">
+</form>
+
+
+<div *ngIf="searchText !== ''" id="allCourses">
+
+    <table *ngIf="sortedList.length > 0">
+      <tr>
+        <th>Kurskod</th>
+        <th>Ämneskod</th>
+        <th>Nivå</th>
+        <th>Progression</th>
+        <th>Kursnamn</th>
+        <th>Poäng</th>
+        <th>Institutionskod</th>
+        <th>Ämne</th>
+        <th>Syllabus</th>
+      </tr>
+
+
+
+      <tr *ngFor="let course of sortedList">
+        <td>{{course.courseCode}}</td>
+        <td>{{course.subjectCode}}</td>
+        <td>{{course.level}}</td>
+        <td>{{course.progression}}</td>
+        <td>{{course.courseName}}</td>
+        <td>{{course.points}}</td>
+        <td>{{course.institutionCode}}</td>
+        <td>{{course.subject}}</td>
+        <td><a href="{{course.syllabus}}">Länk</a></td>
+      </tr>
+
+
+
+    </table>
+  
+    <div *ngIf="sortedList.length === 0">
+      <p>Inga kurser matchar din sökning.</p>
+    </div>
+  </div>
+

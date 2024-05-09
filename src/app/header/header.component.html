@@ -1,0 +1,23 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<button ngbNavLink>1</button>
+		<ng-template ngbNavContent>
+			<p>Ramschema 1</p>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="2">
+		<button ngbNavLink>2</button>
+		<ng-template ngbNavContent>
+			<p>Ramschema 2</p>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="3">
+		<button ngbNavLink>3</button>
+		<ng-template ngbNavContent>
+			<p>Ramschema 3</p>
+		</ng-template>
+	</li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
