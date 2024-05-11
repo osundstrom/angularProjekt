@@ -3,7 +3,29 @@
     width: fit-content;
     margin: auto;
     
-    
+    .nameTable {
+        background-color: white;
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        border: none;
+        text-align: center;
+        th{
+        padding-left: 1%;
+        padding-right: 1%;
+        border: none;
+        
+        }
+        tr{
+            border: none;
+            a{
+                border: none;
+                margin-right: 4vw;
+            }
+        }
+        
+    }
+
     table{
         background-color: aliceblue;
         padding: 1%;
@@ -75,3 +97,4 @@
             
         }
     }
+

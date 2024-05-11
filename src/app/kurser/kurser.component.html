@@ -1,18 +1,30 @@
 <h1>Alla kurser</h1>
 
-
 <form>
   <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearchandDrop()">
+  <br>
+  <br>
   <select name="sort" id="sortId" [(ngModel)]="sort" (change)="sortSearchandDrop()">  
-      <option value="all">Alla ämnen</option>
+      <option value="all">Alla Ämnen</option>
       <option id="subject" *ngFor="let subject of allSubjects" [value]="subject">{{ subject }}</option>
-      <!--<option  *ngFor="let course of sortedList" [value]="course.subject">{{ course.subject }} </option>-->
   </select>
   </form>
-    
 
 
 <div  id="allCourses">
+  <div>
+    <p>Antal kurser: {{sortedList.length}}</p>
+  </div>
+  <table class="nameTable">
+    <tr>
+      <th>
+        <a>Ämne<fa-icon [icon]="faSort"></fa-icon></a>
+        <a>Kursnamn<fa-icon [icon]="faSort"></fa-icon></a>
+        <a>Poäng<fa-icon [icon]="faSort"></fa-icon></a>
+        <a>Kurskod<fa-icon [icon]="faSort"></fa-icon></a>
+      </th>
+    </tr>
+  </table>
 
     <table *ngIf="sortedList.length > 0">
       
@@ -52,4 +64,4 @@
     </div>
   </div>
 
- 
+  

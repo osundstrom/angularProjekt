@@ -7,19 +7,22 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatRadioModule} from '@angular/material/radio';
+import {FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {faSort } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
   selector: 'app-kurser',
   standalone: true,
-  imports: [ NgbPaginationModule, NgbModule, NgFor, FormsModule, CommonModule, NgbAccordionModule],
+  imports: [ FontAwesomeModule, MatRadioModule, NgbPaginationModule, NgbModule, NgFor, FormsModule, CommonModule, NgbAccordionModule],
   templateUrl: './kurser.component.html',
   styleUrl: './kurser.component.scss'
 })
 
 export class KurserComponent {
   
-
+  faSort  = faSort ;
 
   KurserList: Courses[] = [];//Struktur enligt interface
   sortedList: Courses[] = [];
@@ -77,16 +80,10 @@ pageSize = 25;
 //--------------------------------------------------------
 
 
-/*
-sortDrop(): void { 
-
-  if (this.sort === "all") {
-    this.sortedList = this.KurserList;
-  }else {
-    this.sortedList = this.KurserList.filter(course => course.subject === this.sort);
-  }
- 
-
-}*/
+sortCode() {
+  
+}
+  
+  
 
 }
