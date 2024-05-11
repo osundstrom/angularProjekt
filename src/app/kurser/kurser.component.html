@@ -1,5 +1,7 @@
 <h1>Alla kurser</h1>
 
+     
+
 <form>
     <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearch()">
 </form>
@@ -8,34 +10,38 @@
 <div *ngIf="searchText !== ''" id="allCourses">
 
     <table *ngIf="sortedList.length > 0">
-      <tr>
-        <th>Kurskod</th>
-        <th>Ämneskod</th>
-        <th>Nivå</th>
-        <th>Progression</th>
-        <th>Kursnamn</th>
-        <th>Poäng</th>
-        <th>Institutionskod</th>
-        <th>Ämne</th>
-        <th>Syllabus</th>
-      </tr>
+      
+      <tr *ngFor="let course of sortedList | slice: (page-1) * pageSize : page * pageSize">
+        <th>
+          <p>{{course.subject}}, </p>
+          <p>{{course.courseName}}, </p>
+          <p>{{course.points}}p </p>
+        </th>
 
-
-
-      <tr *ngFor="let course of sortedList">
-        <td>{{course.courseCode}}</td>
-        <td>{{course.subjectCode}}</td>
-        <td>{{course.level}}</td>
-        <td>{{course.progression}}</td>
-        <td>{{course.courseName}}</td>
-        <td>{{course.points}}</td>
-        <td>{{course.institutionCode}}</td>
-        <td>{{course.subject}}</td>
-        <td><a href="{{course.syllabus}}">Länk</a></td>
-      </tr>
-
-
-
+        <td>
+          <p>{{course.courseCode}}</p>
+          <!--<p>{{course.subjectCode}}</p>-->
+          <p>{{course.level}} ({{course.progression}})</p>
+          <!--<p>{{course.institutionCode}}</p>-->
+          
+          <p><a href="{{course.syllabus}}">Kursplan</a></p>
+        </td>
+      
+        
+          <td ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdown" ngbDropdownToggle>
+              Lägg till
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdown" id="dropdownDiv">
+              <button id="buttonDrop" ngbDropdownItem>Ramschema 1</button>
+              <button id="buttonDrop" ngbDropdownItem>Ramschema 2</button>
+              <button id="buttonDrop" ngbDropdownItem>Ramschema 3</button>
+              </div>
+            </td>
+        
+        
+        </tr>
+        <ngb-pagination [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination"></ngb-pagination>
     </table>
   
     <div *ngIf="sortedList.length === 0">
@@ -43,3 +49,4 @@
     </div>
   </div>
 
+ 

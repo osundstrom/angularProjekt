@@ -5,15 +5,21 @@ import { KurserService } from '../services/kurser.service';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-kurser',
   standalone: true,
-  imports: [NgbModule, NgFor, FormsModule, CommonModule],
+  imports: [ NgbPaginationModule, NgbModule, NgFor, FormsModule, CommonModule, NgbAccordionModule],
   templateUrl: './kurser.component.html',
   styleUrl: './kurser.component.scss'
 })
+
 export class KurserComponent {
+  
+
 
   KurserList: Courses[] = [];//Struktur enligt interface
   sortedList: Courses[] = [];
@@ -59,5 +65,13 @@ export class KurserComponent {
     }
     
   }
+
+   //--------------------------------------------------------
+//--------------------------------------------------------
+ //--------------------------------------------------------
+//--------------------------------------------------------
+page = 1;
+pageSize = 25;
+
   
 }
