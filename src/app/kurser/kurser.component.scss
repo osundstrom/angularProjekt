@@ -1,6 +1,6 @@
 #allCourses{
     position: relative;
-    width: 100vw;
+    width: fit-content;
     margin: auto;
     
     
@@ -16,11 +16,12 @@
         padding-left: 1%;
         padding-right: 1%;
         border: 1px solid black;
+        
 
         th{
             padding-left: 1%;
             padding-right: 1%;
-            width: fit-content;
+            width: 60vw;
             p{
                 display: inline-block;
                 margin-right: 1%;
@@ -32,8 +33,7 @@
             padding-right: 1%;
             width: fit-content;
             p{
-                display: flex;
-                flex-direction: column;
+                display: inline-block;
             }
             #dropdown{
                 width: fit-content;

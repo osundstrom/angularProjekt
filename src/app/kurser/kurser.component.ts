@@ -23,55 +23,70 @@ export class KurserComponent {
 
   KurserList: Courses[] = [];//Struktur enligt interface
   sortedList: Courses[] = [];
+  sort: string = "all"; 
+  allSubjects: string[] = [];
+
+page = 1;
+pageSize = 25;
 
   constructor(private KurserService: KurserService ) {} 
   ngOnInit() {
     this.KurserService.getAllCourses().subscribe(data => { 
       this.KurserList = data;
       this.sortedList = this.KurserList;
+      this.allSubjects = Array.from(new Set(this.KurserList.map(course => course.subject)));
     })
+    
   }
 
   //--------------------------------------------------------
 //--------------------------------------------------------
   searchText: string = ""; 
 
-  sortSearch(): void { 
+  sortSearchandDrop(): void { 
     let searchLow = this.searchText.toLowerCase();
    
     if (searchLow !== "" ) { 
-    this.sortedList = this.KurserList.filter(kurserLi => 
-      kurserLi.courseCode.toLowerCase().includes(searchLow) 
+    //this.sortedList = this.KurserList.filter(kurserLi => 
+    this.sortedList = this.KurserList.filter(course => (course.subject === this.sort || this.sort === "all") 
+    &&(
+      course.courseCode.toLowerCase().includes(searchLow) 
       ||
-      kurserLi.subjectCode.toLowerCase().includes(searchLow) 
+      course.subjectCode.toLowerCase().includes(searchLow) 
       ||
-      kurserLi.level.toLowerCase().includes(searchLow)
+      course.level.toLowerCase().includes(searchLow)
       ||
-      kurserLi.progression.toLowerCase().includes(searchLow)
+      course.progression.toLowerCase().includes(searchLow)
       ||
-      kurserLi.courseName.toLowerCase().includes(searchLow)
+      course.courseName.toLowerCase().includes(searchLow)
       ||
-      //kurserLi.points.toLowerCase().includes(searchLow)
-      //||
-      kurserLi.institutionCode.toLowerCase().includes(searchLow)
+      course.institutionCode.toLowerCase().includes(searchLow)
       ||
-      kurserLi.subject.toLowerCase().includes(searchLow)
+      course.subject.toLowerCase().includes(searchLow)
       ||
-      kurserLi.syllabus.toLowerCase().includes(searchLow)
+      course.syllabus.toLowerCase().includes(searchLow)
+      )
       
-      
-    ) } else{ 
-      this.sortedList=this.KurserList; 
-    }
-    
-  }
+    ) } else {
+      this.sortedList = this.KurserList.filter(course => course.subject === this.sort || this.sort === "all");
+  }}
 
    //--------------------------------------------------------
 //--------------------------------------------------------
  //--------------------------------------------------------
 //--------------------------------------------------------
-page = 1;
-pageSize = 25;
 
-  
+
+/*
+sortDrop(): void { 
+
+  if (this.sort === "all") {
+    this.sortedList = this.KurserList;
+  }else {
+    this.sortedList = this.KurserList.filter(course => course.subject === this.sort);
+  }
+ 
+
+}*/
+
 }

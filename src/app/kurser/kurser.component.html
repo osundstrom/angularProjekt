@@ -1,29 +1,32 @@
 <h1>Alla kurser</h1>
 
-     
 
 <form>
-    <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearch()">
-</form>
+  <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearchandDrop()">
+  <select name="sort" id="sortId" [(ngModel)]="sort" (change)="sortSearchandDrop()">  
+      <option value="all">Alla ämnen</option>
+      <option id="subject" *ngFor="let subject of allSubjects" [value]="subject">{{ subject }}</option>
+      <!--<option  *ngFor="let course of sortedList" [value]="course.subject">{{ course.subject }} </option>-->
+  </select>
+  </form>
+    
 
 
-<div *ngIf="searchText !== ''" id="allCourses">
+<div  id="allCourses">
 
     <table *ngIf="sortedList.length > 0">
       
       <tr *ngFor="let course of sortedList | slice: (page-1) * pageSize : page * pageSize">
         <th>
-          <p>{{course.subject}}, </p>
+          <p>{{course.subject}}, ({{course.subjectCode}}) </p>
           <p>{{course.courseName}}, </p>
           <p>{{course.points}}p </p>
+          <p>{{course.level}} ({{course.progression}})</p>
+          
         </th>
 
         <td>
-          <p>{{course.courseCode}}</p>
-          <!--<p>{{course.subjectCode}}</p>-->
-          <p>{{course.level}} ({{course.progression}})</p>
-          <!--<p>{{course.institutionCode}}</p>-->
-          
+          <p><b>{{course.courseCode}}</b></p>
           <p><a href="{{course.syllabus}}">Kursplan</a></p>
         </td>
       
@@ -41,8 +44,8 @@
         
         
         </tr>
-        <ngb-pagination [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination"></ngb-pagination>
     </table>
+    <ngb-pagination [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination" [maxSize]="8"></ngb-pagination>
   
     <div *ngIf="sortedList.length === 0">
       <p>Inga kurser matchar din sökning.</p>
