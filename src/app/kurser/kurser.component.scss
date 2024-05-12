@@ -18,9 +18,15 @@
         }
         tr{
             border: none;
-            a{
+            button{
                 border: none;
+                width: fit-content;
                 margin-right: 4vw;
+                background-color: white;
+            }
+
+            button:hover {
+                text-decoration: underline;
             }
         }
         

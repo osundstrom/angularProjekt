@@ -13,15 +13,15 @@
 
 <div  id="allCourses">
   <div>
-    <p>Antal kurser: {{sortedList.length}}</p>
+    <p><b>Antal kurser: {{sortedList.length}}</b></p>
   </div>
   <table class="nameTable">
     <tr>
       <th>
-        <a>Ämne<fa-icon [icon]="faSort"></fa-icon></a>
-        <a>Kursnamn<fa-icon [icon]="faSort"></fa-icon></a>
-        <a>Poäng<fa-icon [icon]="faSort"></fa-icon></a>
-        <a>Kurskod<fa-icon [icon]="faSort"></fa-icon></a>
+        <button  (click)="sortCode('subject')">Ämne<fa-icon [icon]="faSort"></fa-icon></button>
+        <button  (click)="sortCode('courseName')">Kursnamn<fa-icon [icon]="faSort"></fa-icon></button>
+        <button  (click)="sortCode('points')">Poäng<fa-icon [icon]="faSort"></fa-icon></button>
+        <button  (click)="sortCode('courseCode')">Kurskod<fa-icon [icon]="faSort"></fa-icon></button>
       </th>
     </tr>
   </table>
@@ -60,7 +60,7 @@
     <ngb-pagination [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination" [maxSize]="8"></ngb-pagination>
   
     <div *ngIf="sortedList.length === 0">
-      <p>Inga kurser matchar din sökning.</p>
+      <p><b>Inga kurser matchar din sökning.</b></p>
     </div>
   </div>
 

@@ -79,9 +79,60 @@ pageSize = 25;
  //--------------------------------------------------------
 //--------------------------------------------------------
 
+direction: boolean = false;
 
-sortCode() {
-  
+sortCode(A:any): void { 
+
+  this.direction = !this.direction; //så den varerar mellan true och false.
+  switch(A){ 
+    
+    case ("courseCode"):
+
+      if (this.direction) {
+        this.sortedList.sort((a, b) => a.courseCode.localeCompare(b.courseCode)); 
+      }
+
+      if (!this.direction) {
+        this.sortedList.sort((a, b) => b.courseCode.localeCompare(a.courseCode)); 
+      }
+      
+    break;
+
+    case ("courseName"):
+      if (this.direction) {
+        this.sortedList.sort((a, b) => a.courseName.localeCompare(b.courseName)); 
+      }
+
+      if (!this.direction) {
+        this.sortedList.sort((a, b) => b.courseName.localeCompare(a.courseName)); 
+      }
+    
+    break;
+
+    case ("subject"):
+      if (this.direction) {
+        this.sortedList.sort((a, b) => a.subject.localeCompare(b.subject)); 
+      }
+
+      if (!this.direction) {
+        this.sortedList.sort((a, b) => b.subject.localeCompare(a.subject)); 
+      }
+    
+    break;
+
+    case ("points"):
+      if (this.direction)  {
+        this.sortedList.sort((a:any, b:any) => parseFloat(a.points) - parseFloat(b.points));
+      }
+
+      if (!this.direction)  {
+        this.sortedList.sort((a:any, b:any) => parseFloat(b.points) - parseFloat(a.points));
+      }
+    
+    break;
+
+  }
+
 }
   
   
