@@ -10,5 +10,7 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './ramschema.component.scss'
 })
 export class RamschemaComponent {
-  
+
+
+
 }

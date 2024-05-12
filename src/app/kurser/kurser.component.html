@@ -48,9 +48,9 @@
               Lägg till
             </button>
             <div ngbDropdownMenu aria-labelledby="dropdown" id="dropdownDiv">
-              <button id="buttonDrop" ngbDropdownItem>Ramschema 1</button>
-              <button id="buttonDrop" ngbDropdownItem>Ramschema 2</button>
-              <button id="buttonDrop" ngbDropdownItem>Ramschema 3</button>
+              <button (click)="addOne(course)" id="buttonDrop" ngbDropdownItem>Ramschema 1</button>
+              <button (click)="addTwo(course)" id="buttonDrop" ngbDropdownItem>Ramschema 2</button>
+              <button (click)="addThree(course)" id="buttonDrop" ngbDropdownItem>Ramschema 3</button>
               </div>
             </td>
         

@@ -134,7 +134,34 @@ sortCode(A:any): void {
   }
 
 }
+
+ //--------------------------------------------------------
+//--------------------------------------------------------
+ //--------------------------------------------------------
+//--------------------------------------------------------
+
+addOne(course: Courses) {
+  console.log("1")
+  let addedOne:Courses[] = JSON.parse(localStorage.getItem("addedOne") || "[]");
+  addedOne.push(course);
   
+  localStorage.setItem("addedOne", JSON.stringify(addedOne));
+
+}
+
+addTwo(course: Courses) {
+  let addedTwo:Courses[] = JSON.parse(localStorage.getItem("addedTwo") || "[]");
+  addedTwo.push(course);
+
+  localStorage.setItem("AddedTwo", JSON.stringify(addedTwo));
+}
+
+addThree(course: Courses) {
+  let addedThree:Courses[] = JSON.parse(localStorage.getItem("addedThree") || "[]");
+  addedThree.push(course);
+
+  localStorage.setItem("AddedThree", JSON.stringify(addedThree));
+}
   
 
 }
