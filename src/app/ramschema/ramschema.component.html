@@ -1,4 +1,87 @@
-<app-header/>
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<button (click)="tabNumber(1)" value="1" ngbNavLink>1</button>
+		<ng-template ngbNavContent>
+            <table id="fullRam" *ngIf="AllCourses1.length > 0">
+				<tr *ngFor="let course of AllCourses1">
+				  <th >
+					<p>{{course.subject}}, ({{course.subjectCode}}) </p>
+          			<p>{{course.courseName}}, </p>
+          			<p>{{course.points}}p </p>
+          			<p>{{course.level}} ({{course.progression}})</p>
+				  </th>
+				  <td>
+					<p><b>{{course.courseCode}}</b></p>
+          			<p><a href="{{course.syllabus}}">Kursplan</a></p>
+				  </td>
+				  <td>
+					<button  mat-fab color="warn"><mat-icon>delete</mat-icon></button>
+				  </td>
+				</tr>
+			</table>
+			<p><b>Antal poäng: {{ Allpoints1 }}</b></p>
+			  <div *ngIf="AllCourses1.length === 0">
+				<p>Inga kurser tillagda</p>
+			  </div>
+		</ng-template>
+	</li>
+	
+	<li [ngbNavItem]="2">
+		<button (click)="tabNumber(2)" value="2" ngbNavLink>2</button>
+		<ng-template ngbNavContent>
+			<table id="fullRam" *ngIf="AllCourses2.length > 0">
+				<tr *ngFor="let course of AllCourses2">
+				  <th >
+					<p>{{course.subject}}, ({{course.subjectCode}}) </p>
+          			<p>{{course.courseName}}, </p>
+          			<p>{{course.points}}p </p>
+          			<p>{{course.level}} ({{course.progression}})</p>
+				  </th>
+				  <td>
+					<p><b>{{course.courseCode}}</b></p>
+          			<p><a href="{{course.syllabus}}">Kursplan</a></p>
+				  </td>
+				  <td>
+					<button mat-fab color="warn"><mat-icon>delete</mat-icon></button>
+				  </td>
+				</tr>
+			</table>
+			<p><b>Antal poäng: {{ Allpoints2 }}</b></p>
+			  <div *ngIf="AllCourses2.length === 0">
+				<p>Inga kurser tillagda</p>
+			  </div>
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="3">
+		<button (click)="tabNumber(3)" value="3" ngbNavLink>3</button>
+		<ng-template ngbNavContent>
+			<table id="fullRam" *ngIf="AllCourses3.length > 0">
+				<tr *ngFor="let course of AllCourses3">
+				  <th >
+					<p>{{course.subject}}, ({{course.subjectCode}}) </p>
+          			<p>{{course.courseName}}, </p>
+          			<p>{{course.points}}p </p>
+          			<p>{{course.level}} ({{course.progression}})</p>
+				  </th>
+				  <td>
+					<p><b>{{course.courseCode}}</b></p>
+          			<p><a href="{{course.syllabus}}">Kursplan</a></p>
+				  </td>
+				  <td>
+					<button mat-fab color="warn"><mat-icon>delete</mat-icon></button>
+				  </td>
+				</tr>
+			</table>
+			<p><b>Antal poäng: {{ Allpoints3 }}</b></p>
+			  <div *ngIf="AllCourses3.length === 0">
+				<p>Inga kurser tillagda</p>
+			  </div>
+
+		</ng-template>
+	</li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
 
 
    
