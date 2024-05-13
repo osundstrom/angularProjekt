@@ -10,26 +10,30 @@ export class RamschemaService {
 
 
   constructor() { }
- 
-  getRamschema1(): Courses[] {
-    console.log("ram1");
-    const  data = localStorage.getItem("addedOne");
-    console.log(data)
-    return data ? JSON.parse(data): [];
-  }
 
-  getRamschema2(): Courses[] {
-    console.log("ram2");
-    const data = localStorage.getItem("addedTwo");
-    console.log(data)
-    return data ? JSON.parse(data) : [];
-  }
+  
+  getRamschema1(): any {
 
-  getRamschema3(): Courses[] {
-    console.log("ram3");
-    const data = localStorage.getItem("addedThree");
-    console.log(data)
-    return data ? JSON.parse(data): [];
-  }
+    const  data = localStorage.getItem("addedOne");//hämtar addedOne
+    if(data) {//kollar så datan inte är null/undifined.
+      return JSON.parse(data); //Returnerar parsed data, alltså javascript object
+    }
 
+  }
+    getRamschema2(): any {
+
+      const  data = localStorage.getItem("addedTwo");//hämtar addedOne
+      if(data) {//kollar så datan inte är null/undifined.
+        return JSON.parse(data); //Returnerar parsed data, alltså javascript object
+      }
+    }
+
+      getRamschema3(): any {
+
+        const  data = localStorage.getItem("addedThree");//hämtar addedOne
+        if(data) {//kollar så datan inte är null/undifined.
+          return JSON.parse(data); //Returnerar parsed data, alltså javascript object
+        }
+      }
+  
 }

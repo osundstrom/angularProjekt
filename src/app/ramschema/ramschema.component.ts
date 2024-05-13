@@ -81,7 +81,9 @@ export class RamschemaComponent {
     }
 
 
-    test() {
-      console.log("222222")
+    deleteFunc() {
+      
     }
+
+
 }
