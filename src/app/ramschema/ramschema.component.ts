@@ -81,9 +81,33 @@ export class RamschemaComponent {
     }
 
 
-    deleteFunc() {
+    deleteFunc1(x: any): void { //funktion för 1:a ramshema delete
+      const delNum = this.AllCourses1.indexOf(x);//index på den specifika kursen
+      this.AllCourses1.splice(delNum, 1)//tar bort från array
+      localStorage.setItem("addedOne", JSON.stringify(this.AllCourses1));//uppdaterar localstorage med den nya datan där kursen är borttagen
+    };
+
+
+    deleteFunc2(x: any): void { //funktion för 2:a ramschema delete
+      const delNum = this.AllCourses2.indexOf(x);//index på den specifika kursen
+      this.AllCourses2.splice(delNum, 1)//tar bort från array
+      localStorage.setItem("addedTwo", JSON.stringify(this.AllCourses2));//uppdaterar localstorage med den nya datan där kursen är borttagen
+    };
+
+
+    deleteFunc3(x: any): void { //funktion för 3:e ramschema delete
+      const delNum = this.AllCourses3.indexOf(x);//index på den specifika kursen
+      this.AllCourses3.splice(delNum, 1)//tar bort från array
+      localStorage.setItem("addedThree", JSON.stringify(this.AllCourses3));//uppdaterar localstorage med den nya datan där kursen är borttagen
+    };
+          
+        
+          
+        
+  
+       
       
-    }
+    
 
 
 }

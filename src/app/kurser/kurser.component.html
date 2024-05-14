@@ -44,7 +44,7 @@
       
         
           <td ngbDropdown class="d-inline-block">
-            <button type="button" class="btn btn-outline-primary" id="dropdown" ngbDropdownToggle>
+            <button type="button" class="btn btn-outline-primary btn-sm" id="dropdown" ngbDropdownToggle>
               Lägg till
             </button>
             <div ngbDropdownMenu aria-labelledby="dropdown" id="dropdownDiv">
@@ -57,7 +57,7 @@
         
         </tr>
     </table>
-    <ngb-pagination [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination" [maxSize]="8"></ngb-pagination>
+    <ngb-pagination class="d-flex justify-content-center" [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination" [maxSize]="6" size="sm"></ngb-pagination>
   
     <div *ngIf="sortedList.length === 0">
       <p><b>Inga kurser matchar din sökning.</b></p>

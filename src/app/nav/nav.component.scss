@@ -6,8 +6,9 @@ nav{
         display: block;
     }
     img{
-        width: 8rem;
+        width: 7rem;
         margin: auto;
+        margin-left: -1vw;
         position: relative;
         
     }
@@ -28,12 +29,12 @@ nav{
     }
     button{
         color: black;
-        background-color: white ;
+        background-color: aliceblue ;
         text-decoration: none;
         border: none;
         border-radius: 50px;
         width: fit-content;
-        border: 1px solid white;
+        border: 1px solid rgb(0, 0, 0);
         
     }
     button:hover{
@@ -42,4 +43,16 @@ nav{
         border: 1px solid black;
         
     }
+
+
+    @media screen and (max-width: 700px) {
+        img{
+            width: 7rem;
+            margin: auto;
+            margin-left: -3vw;
+            position: relative;
+            
+        }
+
+     }
 }
