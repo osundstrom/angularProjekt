@@ -1,0 +1,43 @@
+
+#errorDiv {
+    position: relative;
+    width: 100vw;
+    
+    #errorText{
+        z-index: 1;
+        text-align: center;
+        position: relative;
+        p{
+            font-weight: 900;
+            font-size: 180%;
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+            margin-top: 5vh;
+            
+        }
+
+    }
+
+    #imageError404{
+        margin: 0 auto;
+        position: relative;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            position: relative;
+            z-index: -1;
+            object-position: center;
+            width: fit-content;
+            height: 50vh;
+            border: 1px solid aliceblue;
+            border-radius: 10px;
+            
+        
+        }
+        
+    }
+    
+}
