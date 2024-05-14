@@ -17,6 +17,8 @@ export class RamschemaService {
     const  data = localStorage.getItem("addedOne");//hämtar addedOne
     if(data) {//kollar så datan inte är null/undifined.
       return JSON.parse(data); //Returnerar parsed data, alltså javascript object
+    }else {
+      return [];
     }
 
   }
@@ -25,6 +27,8 @@ export class RamschemaService {
       const  data = localStorage.getItem("addedTwo");//hämtar addedOne
       if(data) {//kollar så datan inte är null/undifined.
         return JSON.parse(data); //Returnerar parsed data, alltså javascript object
+      } else {
+        return [];
       }
     }
 
@@ -33,6 +37,8 @@ export class RamschemaService {
         const  data = localStorage.getItem("addedThree");//hämtar addedOne
         if(data) {//kollar så datan inte är null/undifined.
           return JSON.parse(data); //Returnerar parsed data, alltså javascript object
+        }else {
+          return [];
         }
       }
   
