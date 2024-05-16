@@ -28,19 +28,20 @@ nav{
         
     }
     button{
-        color: black;
-        background-color: aliceblue ;
+        color: white;
+        background-color: rgb(52, 127, 240) ;
         text-decoration: none;
         border: none;
-        border-radius: 50px;
+        border-radius: 10px;
         width: fit-content;
         border: 1px solid rgb(0, 0, 0);
         
     }
     button:hover{
         text-decoration: underline;
-        background-color: aquamarine;
+        background-color: rgb(25, 105, 224) ;
         border: 1px solid black;
+        color: white;
         
     }
 

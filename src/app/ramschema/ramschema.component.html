@@ -1,6 +1,6 @@
 <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs"> <!--från bootstrap en navigering med 3 flikar-->
 	<li [ngbNavItem]="1">
-		<button (click)="tabNumber(1)" value="1" ngbNavLink>1</button> <!--Kör tabnumber med 1-->
+		<button (click)="tabNumber(1)" value="1" ngbNavLink>&#8544;</button> <!--Kör tabnumber med 1-->
 		<ng-template ngbNavContent>
 			<p><b>Antal poäng: {{ Allpoints1 }}</b></p>  <!--visar poäng-->
             <table id="fullRam" *ngIf="AllCourses1.length > 0"> <!--Om kurser finns-->
@@ -22,14 +22,14 @@
 			</table>
 			
 			  <div *ngIf="AllCourses1.length === 0"> <!--Om inga kurser-->
-				<p>Inga kurser tillagda</p>
+				<p><b>Inga kurser tillagda</b></p>
 			  </div>
 			  <hr>
 		</ng-template>
 	</li>
 	
 	<li [ngbNavItem]="2">
-		<button (click)="tabNumber(2)" value="2" ngbNavLink>2</button> <!--Kör tabnumber med 1-->
+		<button (click)="tabNumber(2)" value="2" ngbNavLink>&#8545;</button> <!--Kör tabnumber med 1-->
 		<ng-template ngbNavContent>
 			<p><b>Antal poäng: {{ Allpoints2 }}</b></p>  <!--visar poäng-->
 			<table id="fullRam" *ngIf="AllCourses2.length > 0"> <!--Om kurser finns-->
@@ -51,13 +51,13 @@
 			</table>
 			
 			  <div *ngIf="AllCourses2.length === 0"> <!--Om inga kurser-->
-				<p>Inga kurser tillagda</p>
+				<p><b>Inga kurser tillagda</b></p>
 			  </div>
 			  <hr>
 		</ng-template>
 	</li>
 	<li [ngbNavItem]="3">
-		<button (click)="tabNumber(3)" value="3" ngbNavLink>3</button> <!--Kör tabnumber med 1-->
+		<button (click)="tabNumber(3)" value="3" ngbNavLink>&#8546;</button> <!--Kör tabnumber med 1-->
 		<ng-template ngbNavContent>
 			<p><b>Antal poäng: {{ Allpoints3 }}</b></p> <!--visar poäng-->
 			<table id="fullRam" *ngIf="AllCourses3.length > 0"> <!--Om kurser finns-->
@@ -79,7 +79,7 @@
 			</table>
 
 			  <div *ngIf="AllCourses3.length === 0"> <!--Om inga kurser-->
-				<p>Inga kurser tillagda</p>
+				<p><b>Inga kurser tillagda</b></p>
 			  </div>
 			  <hr>
 		</ng-template>
