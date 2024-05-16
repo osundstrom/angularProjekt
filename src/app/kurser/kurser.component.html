@@ -1,19 +1,19 @@
 <h1>Alla kurser</h1>
 
 <form>
-  <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearchandDrop()">
+  <input type="text"  name="searchText"  placeholder="Sök här" [(ngModel)]="searchText" (input)="sortSearchandDrop()"> <!--sök rutan för att söka-->
   <br>
   <br>
-  <select name="sort" id="sortId" [(ngModel)]="sort" (change)="sortSearchandDrop()">  
+  <select name="sort" id="sortId" [(ngModel)]="sort" (change)="sortSearchandDrop()">  <!--en dropdown med alla val av subjects-->
       <option value="all">Alla Ämnen</option>
-      <option id="subject" *ngFor="let subject of allSubjects" [value]="subject">{{ subject }}</option>
+      <option id="subject" *ngFor="let subject of allSubjects" [value]="subject">{{ subject }}</option> 
   </select>
   </form>
 
 
 <div  id="allCourses">
   <div>
-    <p><b>Antal kurser: {{sortedList.length}}</b></p>
+    <p><b>Antal kurser: {{sortedList.length}}</b></p> <!--Visar antal kurser i listan-->
   </div>
   <table class="nameTable">
     <tr>
@@ -26,9 +26,9 @@
     </tr>
   </table>
 
-    <table *ngIf="sortedList.length > 0">
+    <table *ngIf="sortedList.length > 0"> <!--Om sortedlist längd är längre än 0 alltså innehar kurser -->
       
-      <tr *ngFor="let course of sortedList | slice: (page-1) * pageSize : page * pageSize">
+      <tr *ngFor="let course of sortedList | slice: (page-1) * pageSize : page * pageSize"> <!--Lägger till varje kurs i listan/table-->
         <th>
           <p>{{course.subject}}, ({{course.subjectCode}}) </p>
           <p>{{course.courseName}}, </p>
@@ -44,10 +44,10 @@
       
         
           <td ngbDropdown class="d-inline-block">
-            <button type="button" class="btn btn-primary btn-sm" id="dropdown" ngbDropdownToggle>
+            <button type="button" class="btn btn-primary btn-sm" id="dropdown" ngbDropdownToggle> <!--en dropdown med val till alla tre ramscheman, via bootstrap-->
               <b>Lägg till</b>
             </button>
-            <div ngbDropdownMenu aria-labelledby="dropdown" id="dropdownDiv">
+            <div ngbDropdownMenu aria-labelledby="dropdown" id="dropdownDiv"> 
               <button (click)="addOne(course)" id="buttonDrop" ngbDropdownItem>Ramschema 1</button>
               <button (click)="addTwo(course)" id="buttonDrop" ngbDropdownItem>Ramschema 2</button>
               <button (click)="addThree(course)" id="buttonDrop" ngbDropdownItem>Ramschema 3</button>
@@ -58,8 +58,8 @@
         </tr>
     </table>
     <ngb-pagination class="d-flex justify-content-center" [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination" [maxSize]="6" size="sm"></ngb-pagination>
-  
-    <div *ngIf="sortedList.length === 0">
+    <!--Pagnering via bootstrap, centreras, väljer data, sätter sida, antal per sida, hur många som ska visas och storlek.   -->
+    <div *ngIf="sortedList.length === 0"> <!--Om sortedlist längd är 0 alltså inga kurser -->
       <p><b>Inga kurser matchar din sökning.</b></p>
     </div>
   </div>

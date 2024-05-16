@@ -1,9 +1,9 @@
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs"> <!--från bootstrap en navigering med 3 flikar-->
 	<li [ngbNavItem]="1">
-		<button (click)="tabNumber(1)" value="1" ngbNavLink>1</button>
+		<button (click)="tabNumber(1)" value="1" ngbNavLink>1</button> <!--Kör tabnumber med 1-->
 		<ng-template ngbNavContent>
-			<p><b>Antal poäng: {{ Allpoints1 }}</b></p>
-            <table id="fullRam" *ngIf="AllCourses1.length > 0">
+			<p><b>Antal poäng: {{ Allpoints1 }}</b></p>  <!--visar poäng-->
+            <table id="fullRam" *ngIf="AllCourses1.length > 0"> <!--Om kurser finns-->
 				<tr *ngFor="let course of AllCourses1">
 				  <th >
 					<p>{{course.subject}}, ({{course.subjectCode}}) </p>
@@ -16,12 +16,12 @@
           			<p><a href="{{course.syllabus}}">Kursplan</a></p>
 				  </td>
 				  <td>
-					<button (click)="deleteFunc1(course)"  mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+					<button (click)="deleteFunc1(course)"  mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button> <!--från angular material knapp, kör deletefunktionen-->
 				  </td>
 				</tr>
 			</table>
 			
-			  <div *ngIf="AllCourses1.length === 0">
+			  <div *ngIf="AllCourses1.length === 0"> <!--Om inga kurser-->
 				<p>Inga kurser tillagda</p>
 			  </div>
 			  <hr>
@@ -29,10 +29,10 @@
 	</li>
 	
 	<li [ngbNavItem]="2">
-		<button (click)="tabNumber(2)" value="2" ngbNavLink>2</button>
+		<button (click)="tabNumber(2)" value="2" ngbNavLink>2</button> <!--Kör tabnumber med 1-->
 		<ng-template ngbNavContent>
-			<p><b>Antal poäng: {{ Allpoints2 }}</b></p>
-			<table id="fullRam" *ngIf="AllCourses2.length > 0">
+			<p><b>Antal poäng: {{ Allpoints2 }}</b></p>  <!--visar poäng-->
+			<table id="fullRam" *ngIf="AllCourses2.length > 0"> <!--Om kurser finns-->
 				<tr *ngFor="let course of AllCourses2">
 				  <th >
 					<p>{{course.subject}}, ({{course.subjectCode}}) </p>
@@ -45,22 +45,22 @@
           			<p><a href="{{course.syllabus}}">Kursplan</a></p>
 				  </td>
 				  <td>
-					<button (click)="deleteFunc2(course)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+					<button (click)="deleteFunc2(course)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button> <!--från angular material knapp, kör deletefunktionen-->
 				  </td>
 				</tr>
 			</table>
 			
-			  <div *ngIf="AllCourses2.length === 0">
+			  <div *ngIf="AllCourses2.length === 0"> <!--Om inga kurser-->
 				<p>Inga kurser tillagda</p>
 			  </div>
 			  <hr>
 		</ng-template>
 	</li>
 	<li [ngbNavItem]="3">
-		<button (click)="tabNumber(3)" value="3" ngbNavLink>3</button>
+		<button (click)="tabNumber(3)" value="3" ngbNavLink>3</button> <!--Kör tabnumber med 1-->
 		<ng-template ngbNavContent>
-			<p><b>Antal poäng: {{ Allpoints3 }}</b></p>
-			<table id="fullRam" *ngIf="AllCourses3.length > 0">
+			<p><b>Antal poäng: {{ Allpoints3 }}</b></p> <!--visar poäng-->
+			<table id="fullRam" *ngIf="AllCourses3.length > 0"> <!--Om kurser finns-->
 				<tr *ngFor="let course of AllCourses3">
 				  <th >
 					<p>{{course.subject}}, ({{course.subjectCode}}) </p>
@@ -73,12 +73,12 @@
           			<p><a href="{{course.syllabus}}">Kursplan</a></p>
 				  </td>
 				  <td>
-					<button (click)="deleteFunc3(course)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+					<button (click)="deleteFunc3(course)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button> <!--från angular material knapp, kör deletefunktionen-->
 				  </td>
 				</tr>
 			</table>
 
-			  <div *ngIf="AllCourses3.length === 0">
+			  <div *ngIf="AllCourses3.length === 0"> <!--Om inga kurser-->
 				<p>Inga kurser tillagda</p>
 			  </div>
 			  <hr>

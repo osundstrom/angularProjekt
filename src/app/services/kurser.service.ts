@@ -8,13 +8,14 @@ import { Courses } from '../model/courses';
 })
 export class KurserService {
 
+  //url
   private url: string ="https://matdah.github.io/DT208G---Programmering-i-TypeScript/Moment%205%20-%20Projekt/miun_courses.json"
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { } //använder httpClient så vi kan göra en förfråga 
 
-
-  getAllCourses(): Observable<Courses[]> {
-    return this.http.get<Courses[]>(this.url);
+  //hämtar allt ifrån url, vi får en observable så vi kan premunera på med interface av Courses[]
+  getAllCourses(): Observable<Courses[]> { 
+    return this.http.get<Courses[]>(this.url); 
   }
 }

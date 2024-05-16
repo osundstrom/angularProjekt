@@ -18,66 +18,65 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './ramschema.component.scss'
 })
 export class RamschemaComponent {
-  active = 1;
+  active = 1; //Active till vilket ramschema man är inne på 1,2 eller 3
 
-  AllCourses1: Courses [] = [];
-  AllCourses2: Courses [] = [];
-  AllCourses3: Courses [] = [];
+  AllCourses1: Courses [] = []; //tom array
+  AllCourses2: Courses [] = []; //tom array
+  AllCourses3: Courses [] = []; //tom array
 
-  Allpoints1: number = 0;
-  Allpoints2: number = 0;
-  Allpoints3: number = 0;
+  Allpoints1: number = 0; //Sätter till 0
+  Allpoints2: number = 0; //Sätter till 0
+  Allpoints3: number = 0; //Sätter till 0
   
   
 
-  constructor(public ramschemaService: RamschemaService) {}
+  constructor(public ramschemaService: RamschemaService) {} //injectar ramschemaservice
 
-  ngOnInit(): void {
-    console.log("works")
+  ngOnInit(): void { //kör getAllCourses vid start
+    //console.log("works")
     this.getAllCourses();
     
   }
 
   
   getAllCourses(): void {
-    console.log("works2");
+    //console.log("works2");
     
-    switch (this.active) {
-      case (1):
-        this.AllCourses1 = this.ramschemaService.getRamschema1();
-        this.Allpoints1 = 0;
-        this.AllCourses1.forEach(e => {
-          this.Allpoints1 += e.points;
+    switch (this.active) { //switch sats med activa numret, alltså vilken av rutorna man är inne i.
+      case (1): //när active är 1
+        this.AllCourses1 = this.ramschemaService.getRamschema1(); //sätts från service med getRamchema1
+        this.Allpoints1 = 0; //Sätter till 0
+        this.AllCourses1.forEach(e => { //kollar varje kurs i allCourses 
+          this.Allpoints1 += e.points; //plussar på poängen för varje kurs i allCourses
         });
         //console.log(this.AllCourses1);
         
         break;
-      case (2):
+      case (2): //när active är 2
         
         this.AllCourses2 = this.ramschemaService.getRamschema2();
 
-        this.Allpoints2 = 0;
-        this.AllCourses2.forEach(e => {
-          this.Allpoints2 += e.points;
+        this.Allpoints2 = 0; //Sätter till 0
+        this.AllCourses2.forEach(e => { //kollar varje kurs i allCourses 
+          this.Allpoints2 += e.points;//plussar på poängen för varje kurs i allCourses
         });
-        //console.log(this.AllCourses2);
         break;
-      case (3):
+      case (3): //när active är 3
         
         this.AllCourses3 = this.ramschemaService.getRamschema3();
 
-        this.Allpoints3 = 0;
-        this.AllCourses3.forEach(e => {
-          this.Allpoints3 += e.points;
+        this.Allpoints3 = 0; //Sätter till 0
+        this.AllCourses3.forEach(e => { //kollar varje kurs i allCourses 
+          this.Allpoints3 += e.points; //plussar på poängen för varje kurs i allCourses
         });
         //console.log(this.AllCourses3);
       break 
     }};
 
     
-    tabNumber(tabNumber:number): void{
-      this.active = tabNumber;
-      this.getAllCourses();
+    tabNumber(tabNumber:number): void{ //funktionen för att sätta active
+      this.active = tabNumber; //sätter active till tab number
+      this.getAllCourses(); //kör funktionen
     }
 
 

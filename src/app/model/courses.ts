@@ -1,4 +1,4 @@
-export interface Courses {
+export interface Courses { //skapar ett intercafe
     courseCode: string,
     subjectCode: string,
     level: string,

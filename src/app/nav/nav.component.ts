@@ -9,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
-  logoUni: string = "/assets/images/logoUni.png";
+  logoUni: string = "/assets/images/logoUni.png"; //bild
 }
