@@ -50,8 +50,20 @@ nav{
         img{
             width: 7rem;
             margin: auto;
-            margin-left: -3vw;
+            margin-left: -4vw;
             position: relative;
+            
+        }
+
+        button{
+            color: white;
+            background-color: rgb(52, 127, 240) ;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            font-size: x-small;
+            width: fit-content;
+            border: 1px solid rgb(0, 0, 0);
             
         }
 
