@@ -22,7 +22,7 @@ import {faSort } from '@fortawesome/free-solid-svg-icons';
 
 export class KurserComponent {
   
-  faSort  = faSort ;
+  faSort  = faSort ; //ikon
 
   KurserList: Courses[] = [];//Struktur enligt interface
   sortedList: Courses[] = []; //Struktur enligt interface

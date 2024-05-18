@@ -57,6 +57,7 @@
         
         </tr>
     </table>
+    <hr>
     <ngb-pagination class="d-flex justify-content-center" [collectionSize]="sortedList.length" [(page)]="page" [pageSize]="pageSize" aria-label="Default pagination" [maxSize]="6" size="sm"></ngb-pagination>
     <!--Pagnering via bootstrap, centreras, väljer data, sätter sida, antal per sida, hur många som ska visas och storlek.   -->
     <div *ngIf="sortedList.length === 0"> <!--Om sortedlist längd är 0 alltså inga kurser -->
