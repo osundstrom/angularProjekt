@@ -28,7 +28,7 @@
 
     <table *ngIf="sortedList.length > 0"> <!--Om sortedlist längd är längre än 0 alltså innehar kurser -->
       
-      <tr *ngFor="let course of sortedList | slice: (page-1) * pageSize : page * pageSize"> <!--Lägger till varje kurs i listan/table-->
+      <tr *ngFor="let course of sortedList | slice: (page-1) * pageSize : page * pageSize"> <!-- Gör ny listan utifrån antal som ska visas per sida-->
         <th>
           <p>{{course.subject}}, ({{course.subjectCode}}) </p>
           <p>{{course.courseName}}, </p>
