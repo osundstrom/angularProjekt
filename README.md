@@ -8,5 +8,5 @@ På hemsidan kan man söka i en lista utav alla kurser som universitet erbjuder,
 
 ## Övriga funktioner
 
-Delar av hemsidna använder Angular material samt Bootstrap, detta både för knappar för navigeringsmenys osv. Utöver detta har vi även en pagnering.
+Delar av hemsidan använder sig av Angular material samt Bootstrap, detta både för knappar för navigeringsmenyer (tabs). Utöver detta har vi även en pagnering för alla kurser så det endast visas 25 per sida. 
 
