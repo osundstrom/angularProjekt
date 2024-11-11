@@ -10,3 +10,4 @@ På hemsidan kan man söka i en lista utav alla kurser som universitet erbjuder,
 
 Delar av hemsidan använder sig av Angular material samt Bootstrap, detta både för knappar för navigeringsmenyer (tabs). Utöver detta har vi även en pagnering för alla kurser så det endast visas 25 per sida. 
 
+https://projekttypescript.netlify.app/kurser
